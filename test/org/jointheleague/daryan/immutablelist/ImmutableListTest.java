@@ -1,10 +1,10 @@
-package org.jointheleague.ecolban.immutablelist;
+package org.jointheleague.daryan.immutablelist;
 
 import java.util.NoSuchElementException;
 
-import org.jointheleague.ecolban.immutablelist.EmptyList;
-import org.jointheleague.ecolban.immutablelist.ImmutableList;
-import org.jointheleague.ecolban.immutablelist.ListNode;
+import org.jointheleague.daryan.immutablelist.EmptyList;
+import org.jointheleague.daryan.immutablelist.ImmutableList;
+import org.jointheleague.daryan.immutablelist.ListNode;
 import org.junit.Test;
 
 import junit.framework.TestCase;

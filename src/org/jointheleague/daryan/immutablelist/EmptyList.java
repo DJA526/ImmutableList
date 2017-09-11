@@ -8,7 +8,7 @@ public class EmptyList<T> implements ImmutableList<T> {
 	static final EmptyList instance = new EmptyList();
 
 	@SuppressWarnings("unchecked")
-	public static ImmutableList<Integer> getInstance() {
+	public static ImmutableList getInstance() {
 		return instance;
 	}
 
@@ -29,12 +29,12 @@ public class EmptyList<T> implements ImmutableList<T> {
 
 	@Override
 	public ImmutableList<T> push(T e) {
-		ListNode newList = new ListNode(e, this);
+		return new ListNode<>(e, this);
 	}
 
 	@Override
 	public ImmutableList<T> append(T e) {
-		return this;
+		return new ListNode<>(e, this);
 	}
 
 	@Override

@@ -1,9 +1,15 @@
 package org.jointheleague.daryan.immutablelist;
 
-public class ListNode<T> implements ImmutableList<Integer> {
+public class ListNode<T> implements ImmutableList<T> {
+	
+	private final T head;
+	private final ImmutableList<T> tail;
+	private final int length;
 
-	public ListNode<T>(T e, ImmutableList<T> list) {
-		
+	public ListNode(T e, ImmutableList<T> list) {
+		head = e;
+		tail = list;
+		length = tail.length() + 1;
 	}
 
 	@Override
@@ -13,38 +19,32 @@ public class ListNode<T> implements ImmutableList<Integer> {
 
 	@Override
 	public int length() {
-		// TODO Auto-generated method stub
-		return 0;
+		return length;
 	}
 
 	@Override
-	public ImmutableList<Integer> remove(Integer e) {
-		// TODO Auto-generated method stub
-		return null;
+	public ImmutableList<T> remove(T e) {
+		return new ListNode<>(e, remove(e));
 	}
 
 	@Override
-	public ImmutableList<Integer> push(Integer e) {
-		// TODO Auto-generated method stub
-		return null;
+	public ImmutableList<T> push(T e) {
+		return new ListNode<>(e, this);
 	}
 
 	@Override
-	public ImmutableList<Integer> append(Integer e) {
-		// TODO Auto-generated method stub
-		return null;
+	public ImmutableList<T> append(T e) {
+		return new ListNode<>(head, tail.append(e));
 	}
 
 	@Override
-	public Integer head() {
-		// TODO Auto-generated method stub
-		return null;
+	public T head() {
+		return head;
 	}
 
 	@Override
-	public ImmutableList<Integer> tail() {
-		// TODO Auto-generated method stub
-		return null;
+	public ImmutableList<T> tail() {
+		return tail;
 	}
 
 }

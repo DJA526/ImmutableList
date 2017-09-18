@@ -39,12 +39,12 @@ public class EmptyList<T> implements ImmutableList<T> {
 
 	@Override
 	public T head() {
-		throw new NoSuchElementException();
+		throw new NoSuchElementException("EmptyList has no head.");
 	}
 
 	@Override
 	public ImmutableList<T> tail() {
-		throw new NoSuchElementException();
+		throw new NoSuchElementException("EmptyList has no tail.");
 	}
 
 	public String toString() {
